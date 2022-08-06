@@ -12,6 +12,11 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.logo {
+  opacity: 0.8;
+  max-width: 12rem;
+}
+
 .container {
   background-color: rgba(3, 28, 11, 0.84);
   min-height: 100vh;
@@ -23,17 +28,31 @@ body {
 #header-title {
   margin-top: 0;
   padding-top: 1rem;
+  font-weight: bold;
+  color: rgb(239, 255, 225);
 }
 
 header {
-  text-align: center;
   padding: 2rem 0 1rem;
-  color: rgb(193, 218, 170);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footerimg {
+  max-width: 35rem;
 }
 
 h2 {
   text-align: center;
   margin: 1rem 0 2rem 0;
+  color:rgb(208, 236, 182);
 }
 
 .poster {
