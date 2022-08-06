@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1 id="header-title">about Studio Ghibli</h1>
+      <h1 id="header-title">Studio Ghibli Encyclopedia</h1>
     </header>
   );
 }

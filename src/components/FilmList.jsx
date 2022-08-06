@@ -26,7 +26,7 @@ function FilmList() {
 
   return (
     <>
-      <h3>Studio Ghibli films:</h3>
+      <h2>Choose a Studio Ghibli film and find out more about it</h2>
       <div className="accordion">
         {films.map((film) => (
           // eslint-disable-next-line max-len

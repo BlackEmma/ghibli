@@ -9,18 +9,14 @@ body {
   background-repeat: repeat-y;
   background-size: 100%;
   min-height: 100vh;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .container {
   background-color: rgba(3, 28, 11, 0.84);
   min-height: 100vh;
   margin: 0 5rem;
-  padding: 0 3rem;
+  padding: 0 3rem 3rem;
   color: rgb(162, 186, 139);
 }
 
@@ -29,14 +25,28 @@ code {
   padding-top: 1rem;
 }
 
-h1 {
+header {
   text-align: center;
-  margin: 2rem 0 4rem 0;
+  padding: 2rem 0 1rem;
+  color: rgb(193, 218, 170);
+}
+
+h2 {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.poster {
+  max-width: 15rem;
 }
 
 .accordion {
   max-width: 600px;
   margin: 2rem auto;
+}
+
+.accordion-item {
+  font-weight: 700;
 }
 
 .accordion-title {

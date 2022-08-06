@@ -18,7 +18,8 @@ const Accordion = ({
         <div>{isActive ? '-' : '+'}</div>
       </div>
       {isActive && <div className="accordion-content">
-        Original title: {originalTitle}<br/><br/>
+        <img className="poster" src={`${process.env.PUBLIC_URL}/img/${title}.jpg`} alt='...'/>
+        <br/><br/>Original title: {originalTitle}<br/><br/>
         Description:<p>{description}</p>
         Release date: {releaseDate} year<br/><br/>
         Running time: {runningTime} min<br/><br/>
