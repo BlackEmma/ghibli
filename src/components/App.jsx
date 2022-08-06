@@ -1,6 +1,6 @@
 import Header from './Header.jsx';
 import FilmList from './FilmList.jsx';
-import logo from '../logo6.jpg';
+import logo from '../logo6.png';
 
 function App() {
   return (
