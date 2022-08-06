@@ -5,9 +5,69 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/wallpaper.png');
+  background-repeat: repeat-y;
+  background-size: 100%;
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  background-color: rgba(3, 28, 11, 0.84);
+  min-height: 100vh;
+  margin: 0 5rem;
+  padding: 0 3rem;
+  color: rgb(162, 186, 139);
+}
+
+#header-title {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+}
+
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: rgba(16, 53, 17, 0.84);
+  color:rgb(193, 218, 170);
+}
+
+.accordion-title:hover {
+  background-color: rgba(25, 72, 26, 0.84);
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+
+.accordion-content {
+  background-color: rgba(41, 80, 43, 0.84);
+  color:rgb(193, 218, 170);
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 18px;
+  }
+
+  .accordion {
+    width: 90%;
+  }
 }
