@@ -6,7 +6,7 @@
 
 Данное приложение предоставляет список фильмов студии Ghibli с возможностью узнать подробную информацию о них.
 
-![app work demo](readme-assets/ghibli%20films%20demo.mp4)
+![app work demo](readme-assets/ghibli-films.gif)
 
 ## Информация об используемом API и запуск приложения
 
