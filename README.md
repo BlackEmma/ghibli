@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Ghibli films
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Информация о данном проекте
 
-## Available Scripts
+Это учебный проект, созданный в рамках первичного ознакомления с React, [Create React App](https://github.com/facebook/create-react-app) и React hooks useState и useEffect.
 
-In the project directory, you can run:
+Данное приложение предоставляет список фильмов студии Ghibli с возможностью узнать подробную информацию о них.
 
-### `npm start`
+![](readme-assets/ghibli%20films.mp4)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Информация об используемом API и запуск приложения
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Приложение получет информацию со стороннего API - [Studio Ghibli API](https://ghibliapi.herokuapp.com).
 
-### `npm test`
+Данное API ранее располагалось на хостинге Heroku, но сейчас недоступно.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Поэтому для корректной работы приложения необходимо склонировать к себе на компьютер [репозиторий API](https://github.com/janaipakos/ghibliapi) и внести следующее изменение в файл index.js:
+заменить номер порта с 3000 на 3080.
+![изменение в файле index.js](readme-assets/edit-index-js.png)
 
-### `npm run build`
+В самом приложении Ghibli films необходимые для работы изменения уже внесены:
+- в файле компонента [FilmList.js](src/components//FilmList.jsx) была закомментирована 13 строка, в которой отправлялся fetch на ранее работавший адрес API - 'https://ghibliapi.herokuapp.com/films',
+- и добавлена 14 строка с отправкой fetch на новый адрес - 'http://localhost:3080/films' (для корректной работы обоих приложений на одном компьютере).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+После чего необходимо запустить API командой `npm start`, а затем запустить данное приложение такой же командой.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Подробнее о работе приложения
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Список фильмов представлен в формате аккордеона ([Accordion](src/components/Accordion.jsx)) - при нажатии на интересующий фильм открывается его секция и становится доступной к ознакомлению подробная информаиция о выбранном фильме, а имменно:
+- постер;
+- описание;
+- оригинальное название;
+- директор фильма;
+- продюсер фильма;
+- дата выхода;
+- длина фильма в минутах.
 
-### `npm run eject`
+![отображение информации о выбранном фильме](readme-assets/one%20film%20info.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Аккордеон](src/components/Accordion.jsx) реализован при помощи хука useState.
+Состояние компонента меняет по нажатию на него. В зависимости от состояния отображается больше или меньше информации.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![изменение отображения информации о фильме по нажатию на него](readme-assets/ghibli-films.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Сам список фильмов загружается благодаря использованию хука useEffect с пустым массивом зависимостей при первом рендере компонента и сохраняется в состояние компонента благодаря хуку useState.
+![начало списка фильмов](readme-assets/film%20list.png)
+![конец списка фильмов](readme-assets/film%20list%20end.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Постеры к фильмам сохранены в папке [public/img](public/img) и названы в соответсвии с каждым фильмом.
 
-## Learn More
+Состояние компонента по умолчанию содержит 3 фильма без дополнительной информации о них:
+- Castle in the Sky';
+- 'My Neighbor Tororo';
+- 'Grave of the Fireflies'.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Поэтому при запуске только приложения Ghibli films (без API), отобразится список только из 3 фильмов, а в информации о выбранном фильме - только постер, остальные пункты будут пустыми.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![отображение приложения без использования API](readme-assets/without%20API.png)
+![отображение информации об одном фильме без использования API](readme-assets/one%20film%20without%20API.png)
