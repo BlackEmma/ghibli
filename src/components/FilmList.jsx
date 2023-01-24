@@ -10,7 +10,9 @@ function FilmList() {
 
   const fetchFilms = async () => {
     try {
-      const response = await fetch('https://ghibliapi.herokuapp.com/films');
+      // const response = await fetch('https://ghibliapi.herokuapp.com/films');
+      const response = await fetch('http://localhost:3080/films');
+      // чтобы одновременно с бэком запускалось
       const data = await response.json();
       setFilms(data);
     } catch (err) {
