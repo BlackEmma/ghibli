@@ -1,59 +1,61 @@
 # Ghibli films
 
-## Информация о данном проекте
+[README in russian](README_RUS.md)
 
-Это учебный проект, созданный в рамках первичного ознакомления с React, [Create React App](https://github.com/facebook/create-react-app) и React hooks useState и useEffect.
+## About this project
 
-Данное приложение предоставляет список фильмов студии Ghibli с возможностью узнать подробную информацию о них.
+This is a training project that was created as part of a first introduction to React, [Create React App](https://github.com/facebook/create-react-app) and the React hooks useState and useEffect.
+
+This app shows a list of Studio Ghibli films with the ability to learn more about them.
 
 ![app work demo](readme-assets/ghibli-films.gif)
 
-## Информация об используемом API и запуск приложения
+## Information about the API used and how to run the application
 
-Приложение получет информацию со стороннего API - [Studio Ghibli API](https://ghibliapi.herokuapp.com).
+The application retrieves information from a third-party API - [Studio Ghibli API](https://ghibliapi.herokuapp.com).
 
-Данное API ранее располагалось на хостинге Heroku, но сейчас недоступно.
+This API was previously hosted by Heroku, but is no longer available.
 
-Поэтому для корректной работы приложения необходимо склонировать к себе на компьютер [репозиторий API](https://github.com/janaipakos/ghibliapi) и внести следующее изменение в файл index.js:
-заменить номер порта с 3000 на 3080.
-![изменение в файле index.js](readme-assets/edit-index-js.png)
+Therefore, for the application to work correctly you need to clone the [API repository](https://github.com/janaipakos/ghibliapi) and make the following change to the index.js file:
+change the port number from 3000 to 3080.
+![change in the index.js file](readme-assets/edit-index-js.png)
 
-В самом приложении Ghibli films необходимые для работы изменения уже внесены:
-- в файле компонента [FilmList.js](src/components//FilmList.jsx) была закомментирована 13 строка, в которой отправлялся fetch на ранее работавший адрес API - 'https://ghibliapi.herokuapp.com/films',
-- и добавлена 14 строка с отправкой fetch на новый адрес - 'http://localhost:3080/films' (для корректной работы обоих приложений на одном компьютере).
+In the Ghibli films application itself, the necessary changes have already been made:
+- in the [FilmList.js] file (src/components//FilmList.jsx), line 13 has been commented out, which sent fetch to the previously working API address - 'https://ghibliapi.herokuapp.com/films',
+- and added line 14, which sends fetch to the new address - 'http://localhost:3080/films' (for both applications to work correctly on one machine).
 
-После чего необходимо запустить API командой `npm start`, а затем запустить данное приложение такой же командой.
+After that you need to start the API with the command `npm start` and then start this application with the same command.
 
-## Подробнее о работе приложения
+## More about how the application works
 
-Список фильмов представлен в формате аккордеона ([Accordion](src/components/Accordion.jsx)) - при нажатии на интересующий фильм открывается его секция и становится доступной к ознакомлению подробная информаиция о выбранном фильме, а имменно:
-- постер;
-- описание;
-- оригинальное название;
-- директор фильма;
-- продюсер фильма;
-- дата выхода;
-- длина фильма в минутах.
+The list of films is presented in accordion format ([Accordion](src/components/Accordion.jsx)) - clicking on the film of interest will open its section and provide detailed information about the selected film, such as
+- poster;
+- description
+- original title
+- director of the film;
+- producer of the film;
+- the release date;
+- the length of the film in minutes.
 
-![отображение информации о выбранном фильме](readme-assets/one%20film%20info.png)
+![displaying information about the selected film](readme-assets/one%20film%20info.png)
 
-[Аккордеон](src/components/Accordion.jsx) реализован при помощи хука useState.
-Состояние компонента меняет по нажатию на него. В зависимости от состояния отображается больше или меньше информации.
+[Accordion](src/components/Accordion.jsx) is implemented with the useState hook.
+The state of the component changes by clicking on it. Depending on the state more or less information is displayed.
 
-![изменение отображения информации о фильме по нажатию на него](readme-assets/ghibli-films.gif)
+![change the display of film information by clicking on it](readme-assets/ghibli-films.gif)
 
-Сам список фильмов загружается благодаря использованию хука useEffect с пустым массивом зависимостей при первом рендере компонента и сохраняется в состояние компонента благодаря хуку useState.
-![начало списка фильмов](readme-assets/film%20list.png)
-![конец списка фильмов](readme-assets/film%20list%20end.png)
+The film list itself is loaded by using the useEffect hook with an empty dependency array when the component is first rendered, and saved to the component state using the useState hook.
+![Start of film list](readme-assets/film%20list.png)
+![End of film list](readme-assets/film%20list%20end.png)
 
-Постеры к фильмам сохранены в папке [public/img](public/img) и названы в соответсвии с каждым фильмом.
+The film posters are stored in [public/img](public/img) and named after each film.
 
-Состояние компонента по умолчанию содержит 3 фильма без дополнительной информации о них:
-- Castle in the Sky';
+The default state of the component contains 3 films with no additional information about them:
+- 'Castle in the Sky';
 - 'My Neighbor Tororo';
 - 'Grave of the Fireflies'.
 
-Поэтому при запуске только приложения Ghibli films (без API), отобразится список только из 3 фильмов, а в информации о выбранном фильме - только постер, остальные пункты будут пустыми.
+Therefore, if you run only the Ghibli films application (without the API), only 3 films will be listed, and the information about the selected film will only show the poster, the rest of the items will be blank.
 
-![отображение приложения без использования API](readme-assets/without%20API.png)
-![отображение информации об одном фильме без использования API](readme-assets/one%20film%20without%20API.png)
+![Displaying the application without API](readme-assets/without%20API.png)
+![Displaying information about one film without the API](readme-assets/one%20film%20without%20API.png)
